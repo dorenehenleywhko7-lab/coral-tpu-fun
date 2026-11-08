@@ -1,0 +1,1895 @@
+version: 2.1
+
+jobs:
+  ext_sess_avg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Focus the login button then screenshot
+          command: |
+            mkdir -p /tmp/queue1
+            set +o pipefail 2>/dev/null; printf '%*s' 1332982 'x' | tr ' ' 'x' > /tmp/queue1/bosonchromechromebond; true
+            wc -w /tmp/queue1/bosonchromechromebond | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'bosonchromechromebond'
+  oscar-7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/bosonchromechromebond -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  ReactiveNonBlockingCommandApi:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: act ten
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; ls --time-style=+%F ./ | nl; true ; } > /tmp/queue1/snapshot-4635
+            wc -w /tmp/queue1/snapshot-4635 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'snapshot-4635'
+  v5-ga4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/snapshot-4635 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  AdvancedTokenTransaction:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: PreloadNightlyBuildPhase
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; cp /etc/os-release "/tmp/warning.conf" && sed -i 's/^NAME=/OS_NAME=/' "/tmp/warning.conf" && diff /etc/os-release "/tmp/warning.conf" | head -n 5; true ; } > /tmp/queue1/tenant
+            wc -w /tmp/queue1/tenant | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'tenant'
+  node18-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/tenant -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  alienData:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: seq 721 fuzz contract tests
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -R umask /etc 2>/dev/null | cut -d: -f1 | sort -u; true ; } > /tmp/queue1/21.10.2027
+            wc -w /tmp/queue1/21.10.2027 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '21.10.2027'
+  hyperion-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/21.10.2027 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  missData:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Shrink wrap labeled if needed
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; cat /etc/os-release | tail -20 | wc -w; true ; } > /tmp/queue1/apilibdb
+            wc -w /tmp/queue1/apilibdb | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'apilibdb'
+  q1-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/apilibdb -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  aki2k:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Lint the perf baseline
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -Hw --max-count=1 if /etc/profile | sort -u; true ; } > /tmp/queue1/uheaeRVKERglN4KWOhhS8
+            wc -w /tmp/queue1/uheaeRVKERglN4KWOhhS8 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'uheaeRVKERglN4KWOhhS8'
+  Verify_Staging1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/uheaeRVKERglN4KWOhhS8 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  ASSERT_GE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Culturing budget 15 ms
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; cat /etc/os-release |tr -d '"' |awk -F = '{ print $2 }'; true ; } > /tmp/queue1/TICKET_061535
+            wc -w /tmp/queue1/TICKET_061535 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'TICKET_061535'
+  raj-verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/TICKET_061535 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  bitId:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Masking depth 9
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -r --include='*.conf' bash /etc 2>/dev/null | sort | head -n 15; true ; } > /tmp/queue1/teal_thunder_willow_east
+            wc -w /tmp/queue1/teal_thunder_willow_east | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'teal_thunder_willow_east'
+  add-db-leak:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/teal_thunder_willow_east -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  warning_circle_output:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Summarise the laptop requests if you would
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; echo hi >'/tmp/customersLogo.out' && stat -c "%U %G %a" '/tmp/customersLogo.out'; true ; } > /tmp/queue1/tmp585ed
+            wc -w /tmp/queue1/tmp585ed | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'tmp585ed'
+  APP-927:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/tmp585ed -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  RHO3D:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Scout closed captions
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; ls -d /proc/[0-9]* | sed 's|.*/||' | tr '[:lower:]' '[:upper:]'; true ; } > /tmp/queue1/shaDeRbEar
+            wc -w /tmp/queue1/shaDeRbEar | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'shaDeRbEar'
+  do-the-thing:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/shaDeRbEar -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  y7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Undertake clustering of the dedupe keys at this point
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; find /tmp -type f -not -name "*" -exec md5sum {} \; 2>/dev/null|head -n 1; true ; } > /tmp/queue1/SKU32150
+            wc -w /tmp/queue1/SKU32150 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'SKU32150'
+  november:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/SKU32150 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  a2ad8c6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Approval perf
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -n fi "$HOME/.bashrc"|head -n 20; true ; } > /tmp/queue1/temp-409661
+            wc -w /tmp/queue1/temp-409661 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'temp-409661'
+  v2-ga:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/temp-409661 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  gridCnt:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: SpawnSkillTree
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; echo "don't panic" >/tmp/tower.out; wc -c /tmp/tower.out; true ; } > /tmp/queue1/run7_8bec
+            wc -w /tmp/queue1/run7_8bec | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'run7_8bec'
+  fix-webhook:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/run7_8bec -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  recomend_factory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Encore packaging
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; diff /etc/passwd /etc/group | head --lines=5; true ; } > /tmp/queue1/271f3d9615b899b4
+            wc -w /tmp/queue1/271f3d9615b899b4 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '271f3d9615b899b4'
+  anothr-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/271f3d9615b899b4 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  sys_ReceiveWake:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Conduct texturing against the skybox
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; basename "/tmp/limit-products-street.log" .log; true ; } > /tmp/queue1/708d76562
+            wc -w /tmp/queue1/708d76562 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '708d76562'
+  rl-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/708d76562 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  DEFAULT_LANG:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Receiving order 5
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; tar cf /tmp/t.tar -C /etc hosts && tar -rf /tmp/t.tar -C /etc shells && tar -tf /tmp/t.tar; true ; } > /tmp/queue1/dat.usr
+            wc -w /tmp/queue1/dat.usr | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'dat.usr'
+  luna-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/dat.usr -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  staging-lb-18:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: On success dump the partitions
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; cp /etc/passwd "/tmp/page-kiwi-20261017.out" && gzip -f "/tmp/page-kiwi-20261017.out" && ls -l "/tmp/page-kiwi-20261017.out".gz; true ; } > /tmp/queue1/client-fjord-fox
+            wc -w /tmp/queue1/client-fjord-fox | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'client-fjord-fox'
+  realease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/client-fjord-fox -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  wbd7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Initiative Badger
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; command grep -o "cpu MHz" /proc/cpuinfo|wc -l; true ; } > /tmp/queue1/84f4e191-4c7d-7760-0e60-343c8a66fb0
+            wc -w /tmp/queue1/84f4e191-4c7d-7760-0e60-343c8a66fb0 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '84f4e191-4c7d-7760-0e60-343c8a66fb0'
+  succes-only:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/84f4e191-4c7d-7760-0e60-343c8a66fb0 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  cn-sierra:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: recording fail
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; ls -1 -A -c /etc/skel | sort -R | head -3; true ; } > /tmp/queue1/scarletlayer
+            wc -w /tmp/queue1/scarletlayer | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'scarletlayer'
+  check-nightly-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/scarletlayer -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  zuluCharlie2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: h2 2023 Thaw
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; sdiff -w 46 <(seq 4) <(seq 2 5)| head -n12; true ; } > /tmp/queue1/HTTP-north
+            wc -w /tmp/queue1/HTTP-north | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'HTTP-north'
+  rl-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/HTTP-north -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  NNKV-3266:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Gc each night
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; find /usr/local -type f -name "*" | sort -r; true ; } > /tmp/queue1/TICKET-24675-FJ
+            wc -w /tmp/queue1/TICKET-24675-FJ | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'TICKET-24675-FJ'
+  hotfix-2078:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/TICKET-24675-FJ -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  buff3r:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: ROTATE KMS KEYS
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -n -m 3 users /etc/group | sort -u; true ; } > /tmp/queue1/PO-50476-TH
+            wc -w /tmp/queue1/PO-50476-TH | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'PO-50476-TH'
+  golf-7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/scarletlayer -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  Lock-SnapshotNonce:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Unfold the canary fleet
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; sum="mannew.log.1" && printf '%s\n' "${sum#*.}"; true ; } > /tmp/queue1/build-v1.8.13
+            wc -w /tmp/queue1/build-v1.8.13 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'build-v1.8.13'
+  API-93:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/scarletlayer -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  da3669f0e7729c20f5a6e:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: I usually stain the reagents last
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; touch "/tmp/local-board-common.conf" && readlink -f "/tmp/local-board-common.conf"; true ; } > /tmp/queue1/quickquickatollreport
+            wc -w /tmp/queue1/quickquickatollreport | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'quickquickatollreport'
+  green-light-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/quickquickatollreport -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  wilson-brad-2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: try number one
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; touch -t 202109101716 "/tmp/ow1.txt" && ls -l --time-style=+%F "/tmp/ow1.txt"; true ; } > /tmp/queue1/INV_070826
+            wc -w /tmp/queue1/INV_070826 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'INV_070826'
+  v2-preview1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/scarletlayer -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  m_castleTile:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: done garbage collecting watchdog
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'build finished' | tr -s ' '; true ; } > /tmp/queue1/49.67.211
+            wc -w /tmp/queue1/49.67.211 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '49.67.211'
+  spin-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/49.67.211 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  rgBrushOk:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Power play dismiss
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -lri umask /etc 2>/dev/null | cut -d: -f1 | sort -u; true ; } > /tmp/queue1/10.05.2017
+            wc -w /tmp/queue1/10.05.2017 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '10.05.2017'
+  v8-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/10.05.2017 -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  COUPON_SHIPMENT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Audit Revenue Split Take 4
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; for name in tuesday friday monday saturday; do echo "<$name>"; done | tac; true ; } > /tmp/queue1/trade
+            wc -w /tmp/queue1/trade | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'trade'
+  publish:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/trade -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  MacroHelmetNewIvyCardSignal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: asdf
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; seq 1 28 | sed '2q'; true ; } > /tmp/queue1/proxy.meadow.river.kappa.green
+            wc -w /tmp/queue1/proxy.meadow.river.kappa.green | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'proxy.meadow.river.kappa.green'
+  rm-oauth-timeout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/proxy.meadow.river.kappa.green -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+  emitDriver:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: rst ports 31
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; printf '%s\n' "cold outside" | wc -m; true ; } > /tmp/queue1/gReenWiLLoWKerneL
+            wc -w /tmp/queue1/gReenWiLLoWKerneL | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'gReenWiLLoWKerneL'
+  ensure-full-integration-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Fetch C
+          command: |
+            find /tmp/queue1/gReenWiLLoWKerneL -type f -exec wc -c {} + 2>/dev/null | tail -1 || true
+      - run:
+          name: Pull sources
+          command: git clone --depth 2 --quiet --single-branch https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xjf prod-resources.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Store metadata
+          command: uptime
+      - run:
+          name: Stabilize
+          command: cmake --version
+      - run:
+          command: bash -c "./adapter-11"
+
+  generatorTulipLimitVector:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Scan inventory two per cart
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; ls -l /dev | grep 'null' | head -4; true ; } > /tmp/queue1/tmp585ed
+            wc -w /tmp/queue1/tmp585ed | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'tmp585ed'
+  undoRetreive:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Begin approving the org chart
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; if [[ ! -s /etc/group ]] ; then echo exists; else echo missing; fi; true ; } > /tmp/queue1/708d76562
+            wc -w /tmp/queue1/708d76562 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '708d76562'
+  chenchen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Ok to approve the performance reviews
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; export id=yearly; export -p|grep id; true ; } > /tmp/queue1/10.05.2017
+            wc -w /tmp/queue1/10.05.2017 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '10.05.2017'
+  dialogEnum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: FAST sanity check
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; shuf -i 20-187 -n 9|awk '{print $1, $1*$1}'|tail --lines=3; true ; } > /tmp/queue1/shaDeRbEar
+            wc -w /tmp/queue1/shaDeRbEar | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'shaDeRbEar'
+  decorator-price:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Flight level 260 assignment
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; echo -n 'yes'|xargs; true ; } > /tmp/queue1/client-fjord-fox
+            wc -w /tmp/queue1/client-fjord-fox | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'client-fjord-fox'
+  no460:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Optimize The Dead Tuples Job
+          command: |
+            mkdir -p /tmp/queue1
+            set +o pipefail 2>/dev/null; printf '%*s' 1332982 'x' | tr ' ' 'x' > /tmp/queue1/bosonchromechromebond; true
+            wc -w /tmp/queue1/bosonchromechromebond | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'bosonchromechromebond'
+  passwordpasswordnormal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Did the interns get badged
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; if test -r /etc/shadow;then echo good; else echo "bad"; fi; true ; } > /tmp/queue1/21.10.2027
+            wc -w /tmp/queue1/21.10.2027 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '21.10.2027'
+  global_type:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: RUN DRY PETRI DISHES
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; awk -F : '$3 > $4{print $1, $NF}' /etc/passwd | nl; true ; } > /tmp/queue1/SKU32150
+            wc -w /tmp/queue1/SKU32150 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'SKU32150'
+  brown200:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Migration note versioning routine
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; if [ -d /nonexistent ];then echo "exists"; else echo "missing"; fi; true ; } > /tmp/queue1/84f4e191-4c7d-7760-0e60-343c8a66fb0
+            wc -w /tmp/queue1/84f4e191-4c7d-7760-0e60-343c8a66fb0 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '84f4e191-4c7d-7760-0e60-343c8a66fb0'
+  relays_list:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Ride forth and warm the bastion host
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; if [[ -d /tmp ]];then echo "found"; elif [[ -e /tmp ]];then echo maybe; else echo "not found"; fi; true ; } > /tmp/queue1/271f3d9615b899b4
+            wc -w /tmp/queue1/271f3d9615b899b4 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '271f3d9615b899b4'
+  scoreFreezeListener:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Probe the antenna at 500 per sec
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; base64 /usr/bin/env | head -n 3; true ; } > /tmp/queue1/dat.usr
+            wc -w /tmp/queue1/dat.usr | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'dat.usr'
+  double_arg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: ok go
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/Ginger-0726"/{rome,dublin,prague} && ls "/tmp/Ginger-0726"; true ; } > /tmp/queue1/HTTP-north
+            wc -w /tmp/queue1/HTTP-north | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'HTTP-north'
+  kjh:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: REDACTION TEST
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -qs '^127' /etc/hosts && echo 'found' || echo 'not found'; true ; } > /tmp/queue1/run7_8bec
+            wc -w /tmp/queue1/run7_8bec | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'run7_8bec'
+  Optimize-LightItem:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Incubation depth 5
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; touch -t 201909121200 '/tmp/t6.log' && stat -c %y '/tmp/t6.log'; true ; } > /tmp/queue1/temp-409661
+            wc -w /tmp/queue1/temp-409661 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'temp-409661'
+  spamquuemai:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: D day announcement
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; tmpd=/laundry/bottom/market/alphaTasks.txt && printf '%s\n' "${tmpd,,}"; true ; } > /tmp/queue1/teal_thunder_willow_east
+            wc -w /tmp/queue1/teal_thunder_willow_east | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'teal_thunder_willow_east'
+  drop-unless:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: wait settle the journal entries
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; { echo 'patch applied'; echo 'trailing spaces   '; } | sort; true ; } > /tmp/queue1/TICKET-24675-FJ
+            wc -w /tmp/queue1/TICKET-24675-FJ | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'TICKET-24675-FJ'
+  osqwusO:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Carefully weigh the extraction kit
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; echo 'back in 5' | tee -a /tmp/draft.out >/dev/null && wc -l /tmp/draft.out; true ; } > /tmp/queue1/uheaeRVKERglN4KWOhhS8
+            wc -w /tmp/queue1/uheaeRVKERglN4KWOhhS8 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'uheaeRVKERglN4KWOhhS8'
+  DogVs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Toss the buffer solution
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; grep -R if /etc/default 2>/dev/null | wc -l; true ; } > /tmp/queue1/49.67.211
+            wc -w /tmp/queue1/49.67.211 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - '49.67.211'
+  okStr:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Contract archival task
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; ls -Ac --time-style=long-iso /usr/share/*/ | awk '{print length, $0}' | sort -n | tail -n 3; true ; } > /tmp/queue1/tenant
+            wc -w /tmp/queue1/tenant | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'tenant'
+  CCGMsaCQjB:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue1
+      - run:
+          name: Ask web to mux podcast episode
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; printenv PATH | tr : '\n'; true ; } > /tmp/queue1/quickquickatollreport
+            wc -w /tmp/queue1/quickquickatollreport | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'quickquickatollreport'
+  UK:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Backup with a dry run first
+          command: |
+            mkdir -p /tmp/queue1
+            { set +o pipefail 2>/dev/null; sort </etc/shells >"/tmp/school2023-04-27.list" && head -3 "/tmp/school2023-04-27.list"; true ; } > /tmp/queue1/TICKET_061535
+            wc -w /tmp/queue1/TICKET_061535 | awk '{print "w3:",$1}'
+      - persist_to_workspace:
+          root: /tmp/queue1
+          paths:
+            - 'TICKET_061535'
+workflows:
+  all:
+    jobs:
+      - warning_circle_output
+      - generatorTulipLimitVector:
+          requires:
+            - warning_circle_output
+      - APP-927:
+          requires:
+            - generatorTulipLimitVector
+      - sys_ReceiveWake:
+          requires:
+            - generatorTulipLimitVector
+      - undoRetreive:
+          requires:
+            - sys_ReceiveWake
+      - rl-new:
+          requires:
+            - undoRetreive
+      - rgBrushOk:
+          requires:
+            - undoRetreive
+      - chenchen:
+          requires:
+            - rgBrushOk
+      - v8-rc:
+          requires:
+            - chenchen
+      - RHO3D:
+          requires:
+            - chenchen
+      - dialogEnum:
+          requires:
+            - RHO3D
+      - do-the-thing:
+          requires:
+            - dialogEnum
+      - staging-lb-18:
+          requires:
+            - dialogEnum
+      - decorator-price:
+          requires:
+            - staging-lb-18
+      - realease:
+          requires:
+            - decorator-price
+      - ext_sess_avg:
+          requires:
+            - decorator-price
+      - no460:
+          requires:
+            - ext_sess_avg
+      - oscar-7:
+          requires:
+            - no460
+      - alienData:
+          requires:
+            - no460
+      - passwordpasswordnormal:
+          requires:
+            - alienData
+      - hyperion-rc:
+          requires:
+            - passwordpasswordnormal
+      - y7:
+          requires:
+            - passwordpasswordnormal
+      - global_type:
+          requires:
+            - y7
+      - november:
+          requires:
+            - global_type
+      - cn-sierra
+      - Lock-SnapshotNonce
+      - check-nightly-release-candidate:
+          requires:
+            - cn-sierra
+            - Lock-SnapshotNonce
+      - API-93:
+          requires:
+            - cn-sierra
+            - Lock-SnapshotNonce
+      - golf-7:
+          requires:
+            - cn-sierra
+            - Lock-SnapshotNonce
+      - v2-preview1:
+          requires:
+            - cn-sierra
+            - Lock-SnapshotNonce
+      - emitDriver
+      - ensure-full-integration-tests:
+          requires:
+            - emitDriver
+      - MacroHelmetNewIvyCardSignal:
+          requires:
+            - emitDriver
+      - rm-oauth-timeout:
+          requires:
+            - MacroHelmetNewIvyCardSignal
+      - ReactiveNonBlockingCommandApi:
+          requires:
+            - MacroHelmetNewIvyCardSignal
+      - v5-ga4:
+          requires:
+            - ReactiveNonBlockingCommandApi
+      - missData:
+          requires:
+            - ReactiveNonBlockingCommandApi
+      - q1-cleanup:
+          requires:
+            - missData
+      - COUPON_SHIPMENT:
+          requires:
+            - missData
+      - publish:
+          requires:
+            - COUPON_SHIPMENT
+      - wbd7
+      - brown200:
+          requires:
+            - wbd7
+      - succes-only:
+          requires:
+            - brown200
+      - recomend_factory:
+          requires:
+            - brown200
+      - relays_list:
+          requires:
+            - recomend_factory
+      - anothr-run:
+          requires:
+            - relays_list
+      - DEFAULT_LANG
+      - scoreFreezeListener:
+          requires:
+            - DEFAULT_LANG
+      - luna-build:
+          requires:
+            - scoreFreezeListener
+      - zuluCharlie2:
+          requires:
+            - scoreFreezeListener
+      - double_arg:
+          requires:
+            - zuluCharlie2
+      - rl-alt:
+          requires:
+            - double_arg
+      - gridCnt:
+          requires:
+            - double_arg
+      - kjh:
+          requires:
+            - gridCnt
+      - fix-webhook:
+          requires:
+            - kjh
+      - a2ad8c6:
+          requires:
+            - kjh
+      - Optimize-LightItem:
+          requires:
+            - a2ad8c6
+      - v2-ga:
+          requires:
+            - Optimize-LightItem
+      - bitId:
+          requires:
+            - Optimize-LightItem
+      - spamquuemai:
+          requires:
+            - bitId
+      - add-db-leak:
+          requires:
+            - spamquuemai
+      - NNKV-3266:
+          requires:
+            - spamquuemai
+      - drop-unless:
+          requires:
+            - NNKV-3266
+      - hotfix-2078:
+          requires:
+            - drop-unless
+      - aki2k
+      - osqwusO:
+          requires:
+            - aki2k
+      - Verify_Staging1:
+          requires:
+            - osqwusO
+      - m_castleTile:
+          requires:
+            - osqwusO
+      - DogVs:
+          requires:
+            - m_castleTile
+      - spin-up:
+          requires:
+            - DogVs
+      - AdvancedTokenTransaction:
+          requires:
+            - DogVs
+      - okStr:
+          requires:
+            - AdvancedTokenTransaction
+      - node18-cov:
+          requires:
+            - okStr
+      - da3669f0e7729c20f5a6e:
+          requires:
+            - okStr
+      - CCGMsaCQjB:
+          requires:
+            - da3669f0e7729c20f5a6e
+      - green-light-go:
+          requires:
+            - CCGMsaCQjB
+      - ASSERT_GE:
+          requires:
+            - CCGMsaCQjB
+      - UK:
+          requires:
+            - ASSERT_GE
+      - raj-verify:
+          requires:
+            - UK
